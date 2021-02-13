@@ -75,7 +75,7 @@ local function drawGame()
     end
     gpu.setBackground(0x00ff00)
     gpu.fill(30, 17, 8, 3, ' ')
-    gpu.set(31, 18, 'Начать')
+    gpu.set(31, 18, 'Start')
 
     --Draw to Screen
     gpu.setBackground(0xffffff)
@@ -406,7 +406,7 @@ local function startGame()
     gpu.fill(4, 15, 25, 5, ' ')
     card_holds = { false, false, false, false, false }
     gpu.setBackground(0x00ff00)
-    gpu.set(30, 18, 'Chips')
+    gpu.set(30, 18, '  Stay  ')
     game = true
     players_cards = {}
     deck:hinder()
