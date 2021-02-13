@@ -1,7 +1,7 @@
 local games = {}
 
 table.insert(games, 
-    title = "Рулетка",
+    title = "Roulette",
     file = "game_Roulette.lua",
     available = true,
     image = "game_Roulette.pic",
@@ -22,7 +22,7 @@ table.insert(games,
 )
 
 table.insert(games, 
-    title = "Блэкджек",
+    title = "Blackjack",
     file = "game_Blackjack.lua",
     available = true,
     image = "game_Blackjack.pic",
@@ -47,7 +47,7 @@ table.insert(games,
 )
 
 table.insert(games, 
-    title = "Видеопокер",
+    title = "Poker - Five Card",
     file = "game_Video_poker.lua",
     available = true,
     image = "game_Video_poker.pic",
@@ -61,7 +61,7 @@ table.insert(games,
 )
 
 table.insert(games, 
-    title = "Больше-Меньше",
+    title = "Higher or Lower",
     file = "game_More_less.lua",
     available = true,
     image = "game_More_less.pic",
@@ -79,22 +79,7 @@ table.insert(games,
 )
 
 table.insert(games, 
-    title = "Сапёр",
-    file = "game_Minesweeper.lua",
-    available = true,
-    image = "game_Minesweeper.pic",
-    author = "krovyaka",
-    description = "Начинайте игру и ищите поля без мин. Если 3 раза подряд\n" ..
-            "не наткнулись на поле с миной, то вы победили. Всего в\n" ..
-            "игре 24 поля, из которых 5 заминированы.\n" ..
-            "Победа в игре удваивает ставку.\n \n" ..
-            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
-            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
-            "не превысит количество валюты на счету казино."
-)
-
-table.insert(games, 
-    title = "Однорукий Крипер",
+    title = "Mineraft Slots",
     file = "game_One_armed_creeper.lua",
     available = true,
     image = "game_One_armed_creeper.pic",
@@ -112,7 +97,7 @@ table.insert(games,
 )
 
 table.insert(games, 
-    title = "Сундуки",
+    title = "Chests",
     file = "game_Chests.lua",
     available = true,
     image = "game_Chests.pic",
