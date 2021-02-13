@@ -119,4 +119,4 @@ table.insert(games, {
             "не превысит количество валюты на счету казино."
 })
 
-return games
+return games 
