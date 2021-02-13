@@ -20,8 +20,8 @@ casino.container = nil
 local containerSize = 0
 
 if settings.PAYMENT_METHOD == 'CHEST' then
-    casino.container = component.chest
-    containerSize = casino.container.getInventorySize()
+    casino.container = component.inventory_controller
+    containerSize = casino.container.getInventorySize(1)
 elseif settings.PAYMENT_METHOD == 'PIM' then
     casino.container = component.pim
     containerSize = 40
