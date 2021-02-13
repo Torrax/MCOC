@@ -15,12 +15,12 @@ local function drawRightMenu()
     gpu.setBackground(login and 0x613C3C or 0x990000)
     gpu.setForeground(0xFFFFFF)
     gpu.fill(41, 17, 28, 3, " ")
-    gpu.set(52, 18, "Выход")
+    gpu.set(52, 18, "Exit")
 
     gpu.setBackground(0x000000)
     gpu.setForeground(0xAAAAAA)
     gpu.fill(41, 2, 28, 14, " ")
-    gpu.set(42, 2, "Вывод:")
+    gpu.set(42, 2, "Exit:")
     for i = 1, #consoleLines do
         gpu.setForeground((15 - #consoleLines + i) * 0x111111)
         gpu.set(42, 16 - i, consoleLines[i])
@@ -96,16 +96,16 @@ local function drawDisplayForOneHand()
 
     gpu.setBackground(0x20B2AA)
     gpu.fill(9, 11, 11, 1, ' ')
-    gpu.set(13, 11, 'Ещё')
+    gpu.set(13, 11, 'Hit')
     gpu.fill(22, 11, 11, 1, ' ')
-    gpu.set(25, 11, 'Хватит')
+    gpu.set(25, 11, 'Stick')
 
     gpu.fill(9, 13, 11, 1, ' ')
-    gpu.set(11, 13, 'Удвоить')
+    gpu.set(11, 13, 'Double Down')
 
     gpu.setBackground(0x00aa00)
     gpu.setForeground(0xffffff)
-    gpu.set(13, 4, "Ставка: " .. value)
+    gpu.set(13, 4, "Rate: " .. value)
 end
 
 local function countCards(temp_cards, boolean)
@@ -218,21 +218,21 @@ local function drawDisplay()
     gpu.fill(32, 5, 6, 3, ' ')
     gpu.set(20, 5, '1')
     value = 1
-    gpu.set(32, 6, 'Начать')
+    gpu.set(32, 6, ' Start ')
     gpu.setForeground(0x000000)
     gpu.setBackground(0xffffff)
 
     gpu.set(5, 11, 'Blackjack')
-    gpu.set(5, 13, 'Правила:')
-    gpu.set(5, 14, '1. Нужно набрать больше очков,')
-    gpu.set(5, 15, 'чем у дилера.')
-    gpu.set(5, 16, '2. Нельзя набирать больше 21 очка.')
-    gpu.set(5, 17, '3. Победа удваивает ставку.')
-    gpu.set(5, 18, '4. Ничья возвращает ставку.')
-    gpu.set(5, 19, 'Более подробно есть в интернете.')
+    gpu.set(5, 13, 'Rules:')
+    gpu.set(5, 14, '1. You must score more points,')
+    gpu.set(5, 15, 'than the dealer.')
+    gpu.set(5, 16, '2. Dont let cards go over 21.')
+    gpu.set(5, 17, '3. Winning doubles your bet.')
+    gpu.set(5, 18, '4. Bets returned on a Draw.')
+    gpu.set(5, 19, 'Check the internet for more.')
 
-    gpu.set(21, 3, 'Выберите ставку')
-end
+    gpu.set(21, 3, 'Select Your Bet')
+endSelect your Bet
 
 local function giveCardPlayer()
     gpu.setBackground(0xffffff)
@@ -305,7 +305,7 @@ local function giveCardPlayer()
     gpu.fill(19, 19, 10, 1, ' ')
     gpu.set(19, 19, countCards(players_cards, false))
     if countCards(players_cards, true) > 21 then
-        message("Перебор, победа казино!")
+        message("Player Busts! Casino Wins.")
         os.sleep(time_sleep_end)
         login = false
         drawDisplay()
@@ -391,7 +391,7 @@ end
 local function dialerStartPlay()
     giveCardDialer()
     if (countCards(dialer_cards, true) == 21) then
-        message("Blackjack, Победа казино!")
+        message("Blackjack! Casino Wins.")
         os.sleep(time_sleep_end)
         login = false
         drawDisplay()
@@ -401,28 +401,28 @@ local function dialerStartPlay()
         giveCardDialer()
     end
     if countCards(dialer_cards, true) > 21 then
-        message("Перебор, победа игрока!")
+        message("Casino Busts! You Win!.")
         casino.reward(value * 2)
-        message("Вы выиграли " .. 2 * value .. "$")
+        message("You won " .. 2 * value .. " Chips")
         os.sleep(time_sleep_end)
         login = false
         drawDisplay()
     elseif countCards(players_cards, true) > countCards(dialer_cards, true) then
-        message("Победа игрока!")
+        message("Player Wins!")
         casino.reward(value * 2)
-        message("Вы выиграли " .. 2 * value .. "$")
+        message("You won " .. 2 * value .. " Chips")
         os.sleep(time_sleep_end)
         login = false
         drawDisplay()
     elseif countCards(players_cards, true) < countCards(dialer_cards, true) then
-        message("Победа казино!")
+        message("Casino wins!")
         os.sleep(time_sleep_end)
         login = false
         drawDisplay()
     else
-        message("Ничья!")
+        message("Draw!")
         casino.reward(value)
-        message("Вы выиграли " .. value .. "$")
+        message("You keep " .. value .. " Chips")
         os.sleep(time_sleep_end)
         login = false
         drawDisplay()
@@ -449,12 +449,12 @@ local function startGame()
             gpu.setBackground(0x20B2AA)
             gpu.setForeground(0xffffff)
             gpu.fill(9, 11, 11, 1, ' ')
-            gpu.set(12, 11, 'Забрать')
+            gpu.set(12, 11, 'Hit')
             gpu.fill(22, 11, 11, 1, ' ')
-            gpu.set(22, 11, 'Продолжить')
+            gpu.set(22, 11, 'Stick')
         else
             message("Blackjack!")
-            message("Вы выиграли " .. value * 1.5)
+            message("You Won " .. value * 1.5 .. " Chips")
             casino.reward(value * 1.5)
             os.sleep(time_sleep_end)
             login = false
@@ -465,7 +465,7 @@ end
 
 local function reward(money, msg)
     message(msg)
-    message("Вы выиграли " .. money)
+    message("You Won " .. money .. " Chips")
     casino.reward(money)
     os.sleep(time_sleep_end)
     login = false
@@ -484,7 +484,7 @@ while true do
             elseif (x >= 22 and y == 11 and x < 33) then
                 giveCardDialer()
                 if (countCards(dialer_cards, true) == 21) then
-                    message("Blackjack!, победа казино!")
+                    message("Blackjack! Casino Wins.")
                 else
                     reward(value * 2.5, "Blackjack!")
                 end
@@ -495,15 +495,15 @@ while true do
             dialerStartPlay()
         elseif x >= 9 and y == 13 and x < 20 then
             if (#players_cards > 2) then
-                message("Только с двумя картами!")
+                message("With only two cards!")
             else
                 local payed, reason = casino.takeMoney(value)
                 if payed then
-                    message("Начало игры за " .. value)
+                    message("Start the game for: " .. value)
                     gpu.setBackground(0x00aa00)
                     value = value * 2
                     gpu.setForeground(0xffffff)
-                    gpu.set(13, 4, "Ставка: " .. value)
+                    gpu.set(13, 4, "Rate: " .. value)
                     giveCardPlayer()
                     if (login) then
                         dialerStartPlay()
@@ -513,7 +513,7 @@ while true do
                 end
             end
         elseif x >= 41 and x <= 69 and y >= 17 and y <= 19 then
-            message("Сначала закончите игру.")
+            message("You must finish the game first!")
         end
     elseif e and not login then
         if x == 20 and y == 5 then
