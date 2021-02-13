@@ -34,10 +34,10 @@ local function getNumberPostfix(number)
     end
     for i = 1, #red do
         if (red[i] == number) then
-            return "(красное)"
+            return "(Red)"
         end
     end
-    return "(чёрное)"
+    return "(Black)"
 end
 
 local function drawStatic()
@@ -61,15 +61,15 @@ local function drawStatic()
     buffer.drawRectangle(33,  18, 13, 3, 0x34a513, 0xffffff, ' ')
     buffer.drawRectangle(75,  18, 13, 3, 0x34a513, 0xffffff, ' ')
     buffer.drawRectangle(89,  18, 13, 3, 0x34a513, 0xffffff, ' ')
-    buffer.drawText(106, 3, 0xffffff, "Top Row")
-    buffer.drawText(106, 7, 0xffffff, "Middle Row")
-    buffer.drawText(106, 11, 0xffffff, "Bottom Row")
+    buffer.drawText(107, 3, 0xffffff, "Top")
+    buffer.drawText(104, 7, 0xffffff, "Middle")
+    buffer.drawText(103, 11, 0xffffff, "Bottom")
     buffer.drawText(28, 15, 0xffffff, "First 12")
     buffer.drawText(56, 15, 0xffffff, "Second 12")
     buffer.drawText(84, 15, 0xffffff, "Third 12")
     buffer.drawText(22, 19, 0xffffff, "1 to 18")
-    buffer.drawText(38, 19, 0xffffff, "Even")
-    buffer.drawText(79, 19, 0xffffff, "Odd")
+    buffer.drawText(36, 19, 0xffffff, "Even")
+    buffer.drawText(82, 19, 0xffffff, "Odd")
     buffer.drawText(91, 19, 0xffffff, "19 to 36")
     buffer.drawRectangle(75, 29, 36, 3,  0xff0000, 0xffffff, ' ')
     buffer.drawRectangle(75, 25, 36, 3,  0x34a513, 0xffffff, ' ')
@@ -81,10 +81,10 @@ local function drawStatic()
     buffer.drawRectangle(3,  23, 71, 9,  0x002f15, 0xffffff, " ")
     buffer.drawRectangle(75, 22, 36, 1,  0xaaaaaa, 0xffffff, ' ')
     buffer.drawRectangle(75, 23, 36, 1,  0x002f15, 0xffffff, ' ')
-    buffer.drawText(89, 26, 0xffffff, "Twist")
-    buffer.drawText(90, 30, 0xffffff, "Exit")
-    buffer.drawText(50, 19, 0xffffff, "Red")
-    buffer.drawText(64, 19, 0xffffff, "Black")
+    buffer.drawText(94, 26, 0xffffff, "Roll")
+    buffer.drawText(92, 30, 0xffffff, "Exit")
+    buffer.drawText(55, 19, 0xffffff, "Red")
+    buffer.drawText(67, 19, 0xffffff, "Black")
     buffer.drawText(4,  22, 0x000000, "Output:")
     buffer.drawText(76, 22, 0x000000, "Current Currency:")
     buffer.drawText(76, 23, 0xffffff, casino.getCurrency().name or "")
@@ -212,13 +212,13 @@ while true do
                             placeBet(i, money)
                         end
                     elseif (left > 46) and (left < 60) and (top > 17) and (top < 21) then
-                        message("You Bet " .. money .. " on Odd")
+                        message("You Bet " .. money .. " on Red")
                         placeBetByTable(red, money * 2)
                     elseif (left > 60) and (left < 74) and (top > 17) and (top < 21) then
                         message("You Bet " .. money .. " on Black")
                         placeBetByTable(black, money * 2)
                     elseif (left > 74) and (left < 88) and (top > 17) and (top < 21) then
-                        message("You Bet " .. money .. " on Red")
+                        message("You Bet " .. money .. " on Odd")
                         money = money * 2
                         for i = 1, 35, 2 do
                             placeBet(i, money)
