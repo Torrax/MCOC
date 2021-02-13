@@ -6,11 +6,11 @@ local filesystem = require("filesystem")
 local meInterface = component.me_interface
 
 local CURRENCY = {
-    name = nil,
+    name = Chips,
     max = nil,
-    image = nil,
-    id = nil,
-    dmg = nil
+    image = 'INGOT',
+    id = "coins.coin",
+    dmg = 0
 }
 
 local currentBetSize = 0
