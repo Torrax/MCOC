@@ -1,4 +1,4 @@
-local REPOSITOTY = "https://raw.githubusercontent.com/Torrax/Casino/main"
+local REPOSITOTY = "https://raw.githubusercontent.com/Torrax/MCOC/main"
 
 local shell = require("shell")
 shell.execute("wget -fq " .. REPOSITOTY .. "/launcher.lua /home/1.lua")
