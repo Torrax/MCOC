@@ -1,6 +1,6 @@
 local games = {}
 
-table.insert(games, {
+table.insert(games, 
     title = "Рулетка",
     file = "game_Roulette.lua",
     available = true,
@@ -19,9 +19,9 @@ table.insert(games, {
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-})
+)
 
-table.insert(games, {
+table.insert(games, 
     title = "Блэкджек",
     file = "game_Blackjack.lua",
     available = true,
@@ -44,9 +44,9 @@ table.insert(games, {
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-})
+)
 
-table.insert(games, {
+table.insert(games, 
     title = "Видеопокер",
     file = "game_Video_poker.lua",
     available = true,
@@ -58,9 +58,9 @@ table.insert(games, {
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-})
+)
 
-table.insert(games, {
+table.insert(games, 
     title = "Больше-Меньше",
     file = "game_More_less.lua",
     available = true,
@@ -76,9 +76,9 @@ table.insert(games, {
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-})
+)
 
-table.insert(games, {
+table.insert(games, 
     title = "Сапёр",
     file = "game_Minesweeper.lua",
     available = true,
@@ -91,9 +91,9 @@ table.insert(games, {
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-})
+)
 
-table.insert(games, {
+table.insert(games, 
     title = "Однорукий Крипер",
     file = "game_One_armed_creeper.lua",
     available = true,
@@ -109,9 +109,9 @@ table.insert(games, {
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-})
+)
 
-table.insert(games, {
+table.insert(games, 
     title = "Сундуки",
     file = "game_Chests.lua",
     available = true,
@@ -125,6 +125,6 @@ table.insert(games, {
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-})
+)
 
 return games
