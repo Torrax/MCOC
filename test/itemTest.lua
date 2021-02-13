@@ -14,7 +14,7 @@ for i = 1, (ct.getInventorySize(storageside)) do
     local item = ct.getStackInSlot(storageside, i)
 
     if item then
-        if string.find(item.name .. "^" .. item.label .. "^", searchfor) then
+        if string.find(item.name .. "^" .. item.label .. "^", searchfor) then                   --string.match(component.transposer.getStackInSlot(sides.west,1).label, searchfor)
             print(i .. ": " .. item.name .. " - " .. item.label .. " (" .. item.size .. ")")
             counted = counted + 1
             slot = i
