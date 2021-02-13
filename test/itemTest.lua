@@ -1,13 +1,13 @@
 local component = require("component")
-local ct = component.transposer
 local shell = require("shell")
 local sides = require("sides")
 
-local storageside = sides.down                            -- CHEST LOCATION VARIABLES
-local chestside = sides.up                               -- sides.up, sides.down, sides.north, sides.south, sides.east, sides.west
+local outputChest = sides.west                             -- CHEST LOCATION VARIABLES
+local bankChest = sides.east                               -- sides.up, sides.down, sides.north, sides.south, sides.east, sides.west
 
 local counted = 0
-local searchfor = diamonds
+local searchfor = "1,000G"
+local winAmount = 22
 
 local i = 0
 for i = 1, (ct.getInventorySize(storageside)) do
@@ -23,10 +23,10 @@ for i = 1, (ct.getInventorySize(storageside)) do
 end
 
 if counted == 1 then                                          -- If Chips were found
-    ct.transferItem(storageside, chestside, 64, slot)         -- Transfer Chips to Slot (Variable)
+    ct.transferItem(outputChest, bankChest, winAmount, slot)  -- Transfer Chips to Slot (Variable)
 end
 
 -- Transfer EVERY ITEM back to other chest
-for i = ct.getInventorySize(chestside), 1, -1 do
-    ct.transferItem(chestside, storageside, 64, i)
-end
+--  for i = ct.getInventorySize(chestside), 1, -1 do
+--      ct.transferItem(bankChest, outputChest, 64, i)
+--  end
