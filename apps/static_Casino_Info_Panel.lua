@@ -36,14 +36,15 @@ local function formattedText(x, y, text)
 end
 
 local howToPlay = [[
-&aКак играть?
- &f1. Зайдите в кабинку и выберите игру.
- 2. Положите в сундук необходимое количество валюты и играйте.
- &cБудьте внимательны и не пускайте посторонних игроков к себе в кабинку!
+&aHow to play?
+ &f1. Right click screen to assume fullscrren mode.
+ 2. Select your perfered game from the list.
+ 3. Place your chips in the chest and begin playing!
 
-&aКак выбирать валюту?
- &fВ главном меню внизу обозначена текущая валюта. Нажатие на неё откроет выпадающий список,
- в котором можно выбрать иную валюту.
+&aHow do you choose a currency?
+ &fIn the main menu, the current currency is displayed at the bottom. 
+ Simply drop your selected chips in the chest to select your currency.
+         PLEASE ONLY PUT ONE TYPE OF CHIP IN AT A TIME
 ]]
 
 gpu.setResolution(100, 25)
