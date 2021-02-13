@@ -232,7 +232,7 @@ local function drawDisplay()
     gpu.set(5, 19, 'Check the internet for more.')
 
     gpu.set(21, 3, 'Select Your Bet')
-endSelect your Bet
+    end
 
 local function giveCardPlayer()
     gpu.setBackground(0xffffff)
