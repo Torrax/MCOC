@@ -70,7 +70,7 @@ end
 
 local function gameStart()
     game = true
-    message("The game has begun for " .. BET_VALUES[bet])
+    message("The game has begun")
     -- В одном из сундуков может быть малая вероятность на джекпот и большая вероятность на 0 (для баланса)
     local jackpotChest = math.random(0, #chests)
 
