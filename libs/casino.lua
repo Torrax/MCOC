@@ -20,8 +20,8 @@ casino.container = nil
 local containerSize = 0
 
 if settings.PAYMENT_METHOD == 'CHEST' then
-    casino.container = component.inventory_controller
-    containerSize = casino.container.getInventorySize(1)
+    casino.container = component.transposer
+    containerSize = casino.container.getInventorySize(settings.CONTAINER_GAIN)
 elseif settings.PAYMENT_METHOD == 'PIM' then
     casino.container = component.pim
     containerSize = 40
@@ -58,7 +58,7 @@ casino.takeMoney = function(money)
     end 
 
     if CURRENCY.max and currentBetSize + money > CURRENCY.max then
-        return false, "Превышен максимум"
+        return false, "Exceeded Maximum"
     end
 
     local sum = 0
@@ -70,7 +70,7 @@ casino.takeMoney = function(money)
     end
     if sum < money then
         casino.reward(sum)
-        return false, "Нужно " .. CURRENCY.name .. " x" .. money
+        return false, "Need to " .. CURRENCY.name .. " x" .. money
     end
     currentBetSize = currentBetSize + money
     return true
