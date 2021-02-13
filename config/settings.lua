@@ -1,6 +1,6 @@
 local settings = {}
 
-settings.REPOSITORY = "https://raw.githubusercontent.com/krovyaka/OpenComputers-Casino/master"
+settings.REPOSITORY = "https://raw.githubusercontent.com/Torrax/MCOC/master"
 settings.TITLE = "Welcome to the Casino"
 settings.ADMINS = { "krovyak", "Durex77" }
 
