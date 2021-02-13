@@ -1,20 +1,28 @@
 local games = {}
 
 table.insert(games, {
-    title = "Roulette",
+    title = "Рулетка",
     file = "game_Roulette.lua",
     available = true,
     image = "game_Roulette.pic",
     author = "krovyaka",
-    description = "Roulette is a casino game where players may choose to place\n" ..
-	    "bets on either a single number, various groupings of numbers, the\n" ..
-	    "colors red or black, whether the number is odd or even, or if the\n" ..
-            "numbers are high (19–36) or low (1–18).\n" ..
-
+    description = "Руле́тка — азартная игра (слово рулетка (roulette)\n" ..
+            "происходит от французского слова «ру» в переводе с\n" ..
+            "французского означает «колесо, ролик, бегунок»). Рулетка\n" ..
+            "впервые появилась во Франции. Она называлась «хока» и в\n" ..
+            "ней было 40 пронумерованных гнёзд и три были помечены\n" ..
+            "«зеро». Во времена короля Луи XIV, кардинал Мазарини,\n" ..
+            "чтобы пополнить казну, повсеместно разрешил во Франции\n" ..
+            "открывать казино. После смерти Мазарини в 1661 году вышел\n" ..
+            "указ, гласивший, что всякий, кто осмелится открыть казино\n" ..
+            "для игры в хока, будет казнен.\n \n" ..
+            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
+            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
+            "не превысит количество валюты на счету казино."
 })
 
 table.insert(games, {
-    title = "Blackjack",
+    title = "Блэкджек",
     file = "game_Blackjack.lua",
     available = true,
     image = "game_Blackjack.pic",
@@ -39,7 +47,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Video Poker",
+    title = "Видеопокер",
     file = "game_Video_poker.lua",
     available = true,
     image = "game_Video_poker.pic",
@@ -53,7 +61,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Higher or Lower",
+    title = "Больше-Меньше",
     file = "game_More_less.lua",
     available = true,
     image = "game_More_less.pic",
@@ -71,7 +79,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Minesweeper",
+    title = "Сапёр",
     file = "game_Minesweeper.lua",
     available = true,
     image = "game_Minesweeper.pic",
@@ -86,7 +94,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Slots",
+    title = "Однорукий Крипер",
     file = "game_One_armed_creeper.lua",
     available = true,
     image = "game_One_armed_creeper.pic",
@@ -104,7 +112,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Chests",
+    title = "Сундуки",
     file = "game_Chests.lua",
     available = true,
     image = "game_Chests.pic",
@@ -119,4 +127,4 @@ table.insert(games, {
             "не превысит количество валюты на счету казино."
 })
 
-return games 
+return games
