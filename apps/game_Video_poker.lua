@@ -75,7 +75,7 @@ local function drawGame()
     end
     gpu.setBackground(0x00ff00)
     gpu.fill(30, 17, 8, 3, ' ')
-    gpu.set(31, 18, 'Start')
+    gpu.set(31, 18, ' Start ')
 
     --Draw to Screen
     gpu.setBackground(0xffffff)
