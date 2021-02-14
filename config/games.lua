@@ -52,12 +52,11 @@ table.insert(games, {
     available = true,
     image = "game_Video_poker.pic",
     author = "Durex77",
-    description = "Видеопокер — игра казино, основанная на правилах\n" ..
-            "пятикарточного покера с обменом. Игра ведется на\n" ..
-            "компьютеризированной консоли с экраном или через интернет\n \n" ..
-            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
-            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
-            "не превысит количество валюты на счету казино."
+    description = "The player is then given 5 cards (like five-card draw) \n" ..
+            "and has the opportunity to discard one or more of them in exchange \n" ..
+            "for new ones drawn from the same virtual deck. After the draw, \n" ..
+            "the machine pays out if the hand or hands played match one of \n" ..
+            "the winning combinations, which are posted in the pay table.\n"
 })
 
 table.insert(games, {
@@ -66,16 +65,11 @@ table.insert(games, {
     available = true,
     image = "game_More_less.pic",
     author = "Durex77",
-    description = "Карточная игра казино, суть которой в том, чтобы угадать,\n" ..
-            "следующая выпавшая карта больше или меньше текущей.\n" ..
-            "Если новая карта равна текущей, тогда данная ситуация\n" ..
-            "считается выигрышной. Итоговая сумма выигрыша составляет\n" ..
-            "ту, которую заберет игру, вовремя остановившись. Чем\n" ..
-            "дальше продвигается игра, тем, соответственно, больше\n" ..
-            "коэффициент выигрыша.\n \n" ..
-            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
-            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
-            "не превысит количество валюты на счету казино."
+    description = "A casino card game that is all about guessing,\n" ..
+            "The next card drawn can be higher or lower than the current.\n" ..
+            "In order to win, you must guess if this card will be higher\n" ..
+            "or lower. If the card displayed ends up being equal to the \n" ..
+            "previous card, then it is concidered a win."
 })
 
 table.insert(games, {
@@ -87,7 +81,7 @@ table.insert(games, {
     description = "A classic one line slot machine, Minecraft edition.\n" ..
             "Slot is programmed to have an increased payout over, \n"..
             "regular casino slot machines. In order to get three characters\n"..
-            "in a row in order to win. The amount depends on the characters.\n \n"
+            "in a row in order to win. The amount depends on the characters."
 })
 
 table.insert(games, {
@@ -99,7 +93,7 @@ table.insert(games, {
     description = "After starting the game, select a Chest.\n" ..
             "Each Chest contains a random amount of currency.\n" ..
             "You can win anywhere from double your bet to nothing.\n" ..
-            "One chest has a small chance to be 10 times your bet.\n"
+            "One chest has a small chance to be 10 times your bet."
 })
 
 return games
