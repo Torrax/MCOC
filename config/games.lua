@@ -1,7 +1,7 @@
 local games = {}
 
-table.insert(games, 
-    title = "Roulette",
+table.insert(games, {
+    title = "Рулетка",
     file = "game_Roulette.lua",
     available = true,
     image = "game_Roulette.pic",
@@ -19,10 +19,10 @@ table.insert(games,
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-)
+})
 
-table.insert(games, 
-    title = "Blackjack",
+table.insert(games, {
+    title = "Блэкджек",
     file = "game_Blackjack.lua",
     available = true,
     image = "game_Blackjack.pic",
@@ -44,10 +44,10 @@ table.insert(games,
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-)
+})
 
-table.insert(games, 
-    title = "Poker - Five Card",
+table.insert(games, {
+    title = "Видеопокер",
     file = "game_Video_poker.lua",
     available = true,
     image = "game_Video_poker.pic",
@@ -58,10 +58,10 @@ table.insert(games,
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-)
+})
 
-table.insert(games, 
-    title = "Higher or Lower",
+table.insert(games, {
+    title = "Больше-Меньше",
     file = "game_More_less.lua",
     available = true,
     image = "game_More_less.pic",
@@ -76,10 +76,25 @@ table.insert(games,
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-)
+})
 
-table.insert(games, 
-    title = "Mineraft Slots",
+table.insert(games, {
+    title = "Сапёр",
+    file = "game_Minesweeper.lua",
+    available = true,
+    image = "game_Minesweeper.pic",
+    author = "krovyaka",
+    description = "Начинайте игру и ищите поля без мин. Если 3 раза подряд\n" ..
+            "не наткнулись на поле с миной, то вы победили. Всего в\n" ..
+            "игре 24 поля, из которых 5 заминированы.\n" ..
+            "Победа в игре удваивает ставку.\n \n" ..
+            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
+            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
+            "не превысит количество валюты на счету казино."
+})
+
+table.insert(games, {
+    title = "Однорукий Крипер",
     file = "game_One_armed_creeper.lua",
     available = true,
     image = "game_One_armed_creeper.pic",
@@ -94,10 +109,10 @@ table.insert(games,
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-)
+})
 
-table.insert(games, 
-    title = "Chests",
+table.insert(games, {
+    title = "Сундуки",
     file = "game_Chests.lua",
     available = true,
     image = "game_Chests.pic",
@@ -110,6 +125,6 @@ table.insert(games,
             "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
             "места для получения выигрыша, а также, что сумма выигрыша\n" ..
             "не превысит количество валюты на счету казино."
-)
+})
 
 return games
