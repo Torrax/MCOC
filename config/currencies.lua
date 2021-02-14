@@ -11,6 +11,7 @@ local function addCurrency(name, id, dmg, model, color, max)
 end
 
 addCurrency("Nothing",                nil,                 nil,    nil,   0xE5E5E5, nil)
+addCurrency("Chips",           "coins.coin",               0,   'INGOT', 0x85BB65, nil)
 addCurrency("Деньги",           "customnpcs:npcMoney",      0,   'INGOT', 0x85BB65, nil)
 addCurrency("Светопыль",        "minecraft:glowstone_dust", 0,   'DUST',  0xD0D000, 5)
 addCurrency("Железный слиток",  "minecraft:iron_ingot",     0,   'INGOT', 0xAAAAAA, nil)
@@ -19,6 +20,6 @@ addCurrency("Медный слиток",    "IC2:itemIngot",            0,   'IN
 addCurrency("Медный блок",      "Forestry:resourceStorage", 1,   'BLOCK', 0xA5642F, 6)
 addCurrency("Оловянный слиток", "IC2:itemIngot",            1,   'INGOT', 0xCCCCCC, nil)
 addCurrency("Оловянный блок",   "Forestry:resourceStorage", 2,   'BLOCK', 0xCCCCCC, 6)
-addCurrency("Chips",           "coins.coin",               0,   'INGOT', 0x85BB65, nil)
+
 
 return currencies
