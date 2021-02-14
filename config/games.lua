@@ -1,7 +1,7 @@
 local games = {}
 
 table.insert(games, {
-    title = "Рулетка",
+    title = "Roulette",
     file = "game_Roulette.lua",
     available = true,
     image = "game_Roulette.pic",
@@ -22,7 +22,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Блэкджек",
+    title = "Blackjack",
     file = "game_Blackjack.lua",
     available = true,
     image = "game_Blackjack.pic",
@@ -47,7 +47,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Видеопокер",
+    title = "Poker - 5 Card",
     file = "game_Video_poker.lua",
     available = true,
     image = "game_Video_poker.pic",
@@ -61,7 +61,7 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Больше-Меньше",
+    title = "Higher or Lower",
     file = "game_More_less.lua",
     available = true,
     image = "game_More_less.pic",
@@ -79,52 +79,27 @@ table.insert(games, {
 })
 
 table.insert(games, {
-    title = "Сапёр",
-    file = "game_Minesweeper.lua",
-    available = true,
-    image = "game_Minesweeper.pic",
-    author = "krovyaka",
-    description = "Начинайте игру и ищите поля без мин. Если 3 раза подряд\n" ..
-            "не наткнулись на поле с миной, то вы победили. Всего в\n" ..
-            "игре 24 поля, из которых 5 заминированы.\n" ..
-            "Победа в игре удваивает ставку.\n \n" ..
-            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
-            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
-            "не превысит количество валюты на счету казино."
-})
-
-table.insert(games, {
-    title = "Однорукий Крипер",
+    title = "Minecraft Slots",
     file = "game_One_armed_creeper.lua",
     available = true,
     image = "game_One_armed_creeper.pic",
     author = "krovyaka",
-    description = "Классическая слот-машина с одной линией. Коэффициенты \n" ..
-            "наград рассчитаны таким образом, чтобы, в среднем, 96%\n"..
-            "средств возвращались игрокам. Для сравения, в казино\n"..
-            "на спавне этот коэффициент составляет около 76%.\n \n" ..
-            "Через какое-то время появятся подобные слот-машины,\n" ..
-            "которые будут со множеством линий и прогрессом (как\n" ..
-            "в реальных современных казино)\n \n" ..
-            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
-            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
-            "не превысит количество валюты на счету казино."
+    description = "A classic one line slot machine, Minecraft edition.\n" ..
+            "Slot is programmed to have an increased payout over, \n"..
+            "regular casino slot machines. In order to get three characters\n"..
+            "in a row in order to win. The amount depends on the characters.\n \n" ..
 })
 
 table.insert(games, {
-    title = "Сундуки",
+    title = "Pick a Chest",
     file = "game_Chests.lua",
     available = true,
     image = "game_Chests.pic",
     author = "krovyaka",
-    description = "Начните игру и выберите сундук с добычей.\n" ..
-            "Каждый сундук содержит случайное количество валюты:\n" ..
-            "От 0 до двойного размера ставки.\n" ..
-            "Один из сундуков с небольшим шансом будет содержать\n"..
-            "десятикратный размер ставки, но чаще всего он будет пуст\n \n" ..
-            "Перед игрой убедитесь, что у Вас будет достаточно\n" ..
-            "места для получения выигрыша, а также, что сумма выигрыша\n" ..
-            "не превысит количество валюты на счету казино."
+    description = "After starting the game, select a Chest.\n" ..
+            "Each Chest contains a random amount of currency.\n" ..
+            "You can win anywhere from double your bet to nothing.\n" ..
+            "One chest has a small chance to be 10 times your bet.\n"
 })
 
 return games
