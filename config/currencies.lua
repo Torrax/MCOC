@@ -4,7 +4,7 @@ local function addCurrency(name, id, lbl, dmg, model, color, max)
     table.insert(currencies, {
         name = name,
         id = id,
-        lbl = lbl
+        lbl = lbl,
         dmg = dmg,
         model = model,
         color = color,
