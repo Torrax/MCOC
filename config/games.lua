@@ -6,8 +6,8 @@ table.insert(games, {
     available = true,
     image = "game_Roulette.pic",
     author = "krovyaka",
-    description = "Руле́тка — азартная игра (слово рулетка (roulette)\n" ..
-            "происходит от французского слова «ру» в переводе с\n" ..
+    description = "Players may choose to place bets on either a single\n" ..
+            "number, various groupings of numbers, the colors red or black,\n" ..
             "французского означает «колесо, ролик, бегунок»). Рулетка\n" ..
             "впервые появилась во Франции. Она называлась «хока» и в\n" ..
             "ней было 40 пронумерованных гнёзд и три были помечены\n" ..
