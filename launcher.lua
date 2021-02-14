@@ -105,9 +105,9 @@ local function drawBigText(x, y, text)
         buffer.drawText(x, y + i, 0x000000, lines[i + 1])
     end
 end
---[[
+
 local function drawCurrency(x, y, currency, current)
-    buffer.drawRectangle(x, y, 46, 3, -- current and 0xA890AA or -- 0xE3E3E3, 0, " ")
+    buffer.drawRectangle(x, y, 46, 3, 0xE3E3E3, 0, " ")
     buffer.drawText(x + 8, y    , 0, currency.name)
     buffer.drawText(x + 8, y + 1, 0, "Maximum Rate: " .. (currency.max or "-"))
     buffer.drawText(x + 8, y + 2, 0, "Avaliable Currency: " .. casino.getCurrencyInStorage(currency))
@@ -132,7 +132,7 @@ local function drawCurrency(x, y, currency, current)
         buffer.drawSemiPixelRectangle(x + 1, y * 2, 4, 4, color)
     end
 end
---]]
+
 
 local function drawStatic()
     buffer.setResolution(160, 50)
@@ -178,7 +178,7 @@ local function drawDynamic()
         local bgColor = selection == games[i] and 0xA890AA or 0xE3E3E3
         drawRectangleWithCenterText(2, 3 + i * 4, 46, 3, games[i].title, bgColor, 0x000000)
     end
---[[
+
     local currentCurrency = casino.getCurrency()
     if state.currencyDropdown then
         local currencyLen = #currencies
@@ -189,7 +189,7 @@ local function drawDynamic()
     drawRectangleWithCenterText(2, 46, 46, 1, "Currency Currency: ", 0x431148, 0xFFFFFF)
     drawCurrency(2, 47, currentCurrency)
     buffer.drawText(40, 48, 0, "Chips")
---]]
+
     if (state.devMode) then
         drawRectangleWithCenterText(51, 40, 50, 5, "Refresh", 0x431148, 0xffffff)
     else
