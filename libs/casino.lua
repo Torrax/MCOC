@@ -6,26 +6,17 @@ local filesystem = require("filesystem")
 local meInterface = component.me_interface
 
 local CURRENCY = {
-    name = Chips,
+    name = nil,
     max = nil,
-    image = 'INGOT',
-    id = "coins.coin",
-    dmg = 0
+    image = nil,
+    id = nil,
+    dmg = nil
 }
 
 local currentBetSize = 0
 
-
-casino.container = nil
-local containerSize = 0
-
-if settings.PAYMENT_METHOD == 'CHEST' then
-    casino.container = component.transposer
-    containerSize = casino.container.getInventorySize(settings.CONTAINER_GAIN)
-elseif settings.PAYMENT_METHOD == 'PIM' then
-    casino.container = component.pim
-    containerSize = 40
-end
+casino.container = component.transposer
+local containerSize = casino.container.getInventorySize(settings.CONTAINER_GAIN)
 
 casino.splitString = function(inputStr, sep)
     if sep == nil then
@@ -93,15 +84,15 @@ end
 casino.gameIsOver = function()
     currentBetSize = 0
 end
---[[
+
 casino.getCurrencyInStorage = function(currency)
     if not currency.id then
         return -1
-    end 
-    local item = {id=currency.id, dmg=currency.dmg}
-    local detail = meInterface.getItemDetail(item)
+    end
+
+    --local item = {id=currency.id, dmg=currency.dmg}
+    local detail = string.match(component.transposer.getStackInSlot(CONTAINER_GAIN,1).label, "1,000G")
     return detail and detail.basic().qty or 0
 end
---]]
-
+    
 return casino
