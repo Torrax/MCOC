@@ -87,7 +87,7 @@ table.insert(games, {
     description = "A classic one line slot machine, Minecraft edition.\n" ..
             "Slot is programmed to have an increased payout over, \n"..
             "regular casino slot machines. In order to get three characters\n"..
-            "in a row in order to win. The amount depends on the characters.\n \n" ..
+            "in a row in order to win. The amount depends on the characters.\n \n"
 })
 
 table.insert(games, {
