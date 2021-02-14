@@ -131,8 +131,8 @@ local function drawCurrency(x, y, currency, current)
         buffer.drawSemiPixelRectangle(x, y * 2 - 1, 6, 6, darkColor)
         buffer.drawSemiPixelRectangle(x + 1, y * 2, 4, 4, color)
     end
---]]
 end
+--]]
 
 local function drawStatic()
     buffer.setResolution(160, 50)
