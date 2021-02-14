@@ -105,10 +105,10 @@ local function drawBigText(x, y, text)
         buffer.drawText(x, y + i, 0x000000, lines[i + 1])
     end
 end
---[[
+
 local function drawCurrency(x, y, currency, current)
-    buffer.drawRectangle(x, y, 46, 3, --[[current and 0xA890AA or--]] 0xE3E3E3, 0, " ")]]--
--[[    buffer.drawText(x + 8, y    , 0, currency.name)
+    buffer.drawRectangle(x, y, 46, 3, --[[current and 0xA890AA or--]] 0xE3E3E3, 0, " ")
+    buffer.drawText(x + 8, y    , 0, currency.name)
     buffer.drawText(x + 8, y + 1, 0, "Максимальная ставка: " .. (currency.max or "-"))
     buffer.drawText(x + 8, y + 2, 0, "У казино: " .. casino.getCurrencyInStorage(currency) .. " шт.")
 
@@ -133,7 +133,7 @@ local function drawCurrency(x, y, currency, current)
     end
 
 end
-]]--
+
 local function drawStatic()
     buffer.setResolution(160, 50)
     drawRectangleWithCenterText(1, 1, 160, 5, settings.TITLE, 0x431148, 0xFFFFFF)
@@ -178,7 +178,7 @@ local function drawDynamic()
         local bgColor = selection == games[i] and 0xA890AA or 0xE3E3E3
         drawRectangleWithCenterText(2, 3 + i * 4, 46, 3, games[i].title, bgColor, 0x000000)
     end
-   --[[
+
     local currentCurrency = casino.getCurrency()
     if state.currencyDropdown then
         local currencyLen = #currencies
@@ -189,7 +189,7 @@ local function drawDynamic()
     drawRectangleWithCenterText(2, 46, 46, 1, "Текущая валюта", 0x431148, 0xFFFFFF)
     drawCurrency(2, 47, currentCurrency)
     buffer.drawText(40, 48, 0, "Сменить")
-]]--
+
     if (state.devMode) then
         drawRectangleWithCenterText(51, 40, 50, 5, "Обновить", 0x431148, 0xffffff)
     else
