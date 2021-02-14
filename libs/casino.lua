@@ -15,8 +15,17 @@ local CURRENCY = {
 
 local currentBetSize = 0
 
-casino.container = component.transposer
-local containerSize = casino.container.getInventorySize(settings.CONTAINER_GAIN)
+
+casino.container = nil
+local containerSize = 0
+
+if settings.PAYMENT_METHOD == 'CHEST' then
+    casino.container = component.transposer
+    containerSize = casino.container.getInventorySize(settings.CONTAINER_GAIN)
+elseif settings.PAYMENT_METHOD == 'PIM' then
+    casino.container = component.pim
+    containerSize = 40
+end
 
 casino.splitString = function(inputStr, sep)
     if sep == nil then
@@ -84,15 +93,15 @@ end
 casino.gameIsOver = function()
     currentBetSize = 0
 end
-
+--[[
 casino.getCurrencyInStorage = function(currency)
     if not currency.id then
         return -1
-    end
-
-    --local item = {id=currency.id, dmg=currency.dmg}
+    end 
+    local item = {id=currency.id, dmg=currency.dmg}
     local detail = string.match(component.transposer.getStackInSlot(CONTAINER_GAIN,1).label, "1,000G")
     return detail and detail.basic().qty or 0
 end
-    
+--]]
+
 return casino
