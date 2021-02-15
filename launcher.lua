@@ -130,6 +130,9 @@ local function drawCurrency(x, y, currency, current)
     elseif currency.model == 'BLOCK' then
         buffer.drawSemiPixelRectangle(x, y * 2 - 1, 6, 6, darkColor)
         buffer.drawSemiPixelRectangle(x + 1, y * 2, 4, 4, color)
+    elseif currency.model == 'COIN' then
+        buffer.drawSemiPixelEllipse(x + 3, y * 2 + 1, 2, 2, darkColor)
+        buffer.drawSemiPixelRectangle(x + 2, y * 2, 3, 3, color)
     end
 end
 
