@@ -3,7 +3,6 @@ local casino = {}
 local component = require("component")
 local shell = require("shell")
 local filesystem = require("filesystem")
-local meInterface = component.me_interface
 
 local CURRENCY = {
     name = nil,
