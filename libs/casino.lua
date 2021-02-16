@@ -98,17 +98,15 @@ casino.getCurrencyInStorage = function(currency)
     if not currency.id then
         return -1
     end     
-    for i = 1, (component.transposer.getInventorySize(settings.CONTAINER_PAY)) do
-        local item = component.transposer.getStackInSlot(settings.CONTAINER_PAY, i)
+    for i = 1, (casino.container.getInventorySize(settings.CONTAINER_PAY)) do
+        local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, i)
         if item then
-             if string.match(component.transposer.getStackInSlot(settings.CONTAINER_PAY,i).label, currency.lbl) then
+             if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,i).label, currency.lbl) then
                 return item and item.size or 0
              end
         end      
    end
    return 0
 end
-
-
 
 return casino
