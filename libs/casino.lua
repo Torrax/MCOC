@@ -46,9 +46,17 @@ casino.reward = function(money)
     money = math.floor(money + 0.5)
     while money > 0 do
         local executed, g = pcall(function()
-            return meInterface.exportItem(CURRENCY, settings.CONTAINER_GAIN, money < 64 and money or 64).size
+            local i = 0
+            for i = 1, (casino.container.getInventorySize(settings.CONTAINER_GAIN)) do
+                local item = casino.container.getStackInSlot(settings.CONTAINER_GAIN, i)
+                if item then
+                    if string.match(casino.container.getStackInSlot(settings.CONTAINER_GAIN,i).name, CURRENCY.id) then
+                        return casino.container.transferItem(settings.CONTAINER_GAIN, settings.CONTAINER_PAY, money, i)
+                    end
+                end
+             end
         end)
-        money = money - (money < 64 and money or 64)
+        money = money - money
     end
 end
 
