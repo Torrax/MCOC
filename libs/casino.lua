@@ -98,8 +98,10 @@ casino.getCurrencyInStorage = function(currency)
         return -1
     end 
     local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, 1)
-    if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).label, currency.lbl) then
-         return item and item.size or 0
+    if item then
+        if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).label, currency.lbl) then
+             return item and item.size or 0
+        end
     end
     return 0
 end
