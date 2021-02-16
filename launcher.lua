@@ -110,7 +110,7 @@ local function drawCurrency(x, y, currency, current)
     buffer.drawRectangle(x, y, 46, 3, 0xE3E3E3, 0, " ")
     buffer.drawText(x + 8, y    , 0, currency.name)
     buffer.drawText(x + 8, y + 1, 0, "Maximum Rate: " .. (currency.max or "-"))
---    buffer.drawText(x + 8, y + 2, 0, "Avaliable Currency: " .. casino.getCurrencyInStorage(currency))
+    buffer.drawText(x + 8, y + 2, 0, "Avaliable Currency: " .. casino.getCurrencyInStorage(currency))
 
     local color = currency.color or 0xE3E3E3
     local darkColor = colorlib.transition(color, 0, 0.1)
