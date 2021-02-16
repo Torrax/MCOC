@@ -64,7 +64,7 @@ casino.takeMoney = function(money)
     local sum = 0
     local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, 1)
     if item then
-        if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).label, CURRENCY.lbl) then
+        if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).name, CURRENCY.id) then
             sum = sum + casino.container.transferItem(settings.CONTAINER_PAY, settings.CONTAINER_GAIN, money - sum, 1)
         end
     end
@@ -101,7 +101,7 @@ casino.getCurrencyInStorage = function(currency)
     end 
     local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, 1)
     if item then
-        if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).label, currency.lbl) then
+        if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).name, currency.id) then
              return item and item.size or 0
         end
     end
