@@ -100,7 +100,7 @@ casino.getCurrencyInStorage = function(currency)
     end 
      --local item = {id=currency.id, dmg=currency.dmg}
        local detail = string.match(component.transposer.getStackInSlot(settings.CONTAINER_GAIN,1).label, currency.lbl)
-    return detail and detail.basic().qty or 0
+    return 44
 end
 
 
