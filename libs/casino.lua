@@ -21,7 +21,7 @@ local containerSize = 0
 
 if settings.PAYMENT_METHOD == 'CHEST' then
     casino.container = component.transposer
-    containerSize = casino.container.getInventorySize(settings.CONTAINER_GAIN)
+    containerSize = 1
 elseif settings.PAYMENT_METHOD == 'PIM' then
     casino.container = component.pim
     containerSize = 40
