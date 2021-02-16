@@ -62,12 +62,11 @@ casino.takeMoney = function(money)
     end
 
     local sum = 0
-    for i = 1, containerSize do
-        local item = casino.container.getStackInSlot(i)
-        if item and not item.nbt_hash and item.id == CURRENCY.id then
-            sum = sum + casino.container.pushItem(settings.CONTAINER_PAY, i, money - sum)
-        end
+    local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, 1)
+    if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).label, CURRENCY.lbl) then
+        sum = sum + casino.container.transferItem(settings.CONTAINER_PAY, settings.CONTAINER_GAIN, money - sum, 1)
     end
+    
     if sum < money then
         casino.reward(sum)
         return false, "Need to " .. CURRENCY.name .. " x" .. money
