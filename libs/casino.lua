@@ -63,10 +63,12 @@ casino.takeMoney = function(money)
 
     local sum = 0
     local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, 1)
-    if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).label, CURRENCY.lbl) then
-        sum = sum + casino.container.transferItem(settings.CONTAINER_PAY, settings.CONTAINER_GAIN, money - sum, 1)
+    if item then
+        if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,1).label, CURRENCY.lbl) then
+            sum = sum + casino.container.transferItem(settings.CONTAINER_PAY, settings.CONTAINER_GAIN, money - sum, 1)
+        end
     end
-    
+        
     if sum < money then
         casino.reward(sum)
         return false, "Need to " .. CURRENCY.name .. " x" .. money
