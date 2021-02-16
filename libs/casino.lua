@@ -63,14 +63,14 @@ casino.takeMoney = function(money)
 
     local sum = 0
     for i = 1, containerSize do
-        local item = casino.container.getStackInSlot(i)
+        local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, i)
         if item and not item.nbt_hash and item.id == CURRENCY.id then
-            sum = sum + casino.container.pushItem(settings.CONTAINER_PAY, i, money - sum)
+            print("Money Moved")
         end
     end
     if sum < money then
         casino.reward(sum)
-        return false, "Need to " .. CURRENCY.name .. " x" .. money
+        return false, "Need more: " .. CURRENCY.name .. " x" .. money
     end
     currentBetSize = currentBetSize + money
     return true
@@ -98,7 +98,7 @@ casino.getCurrencyInStorage = function(currency)
     if not currency.id then
         return -1
     end     
-    for i = 1, (casino.container.getInventorySize(settings.CONTAINER_PAY)) do
+    for i = 1, containerSize do
         local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, i)
         if item then
              if string.match(casino.container.getStackInSlot(settings.CONTAINER_PAY,i).label, currency.lbl) then
