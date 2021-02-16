@@ -21,7 +21,7 @@ local containerSize = 0
 
 if settings.PAYMENT_METHOD == 'CHEST' then
     casino.container = component.transposer
-    containerSize = 1
+    containerSize = casino.container.getInventorySize(settings.CONTAINER_GAIN)
 elseif settings.PAYMENT_METHOD == 'PIM' then
     casino.container = component.pim
     containerSize = 40
@@ -98,10 +98,9 @@ casino.getCurrencyInStorage = function(currency)
     if not currency.id then
         return -1
     end 
-
-    local item = casino.container.getStackInSlot(settings.CONTAINER_PAY, 1)
-    
-    
+     --local item = {id=currency.id, dmg=currency.dmg}
+       local detail = string.match(component.transposer.getStackInSlot(CONTAINER_GAIN,1).label, "1,000G")
+    return detail and detail.basic().qty or 0
 end
 
 return casino
